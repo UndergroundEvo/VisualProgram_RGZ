@@ -86,9 +86,6 @@ namespace UITestsLogicSimulator {
             scheme.Name = clone.Name;
             map.ImportScheme(false);
         }
-
-
-
         private string ComplexSolution(bool lol = false) {
             var sim = map.sim;
             sim.ComparativeTestMode = true;
@@ -111,53 +108,38 @@ namespace UITestsLogicSimulator {
             return sb.ToString();
         }
 
-
-
         [Fact]
         public void GeneralTest() {
             Task.Delay(10).GetAwaiter().GetResult();
-
             SelectGate(0); // AND-gate
             Task.Delay(1).GetAwaiter().GetResult();
-
             IGate? gate = Click(canv, 200, 200);
             Assert.NotNull(gate);
             var data = Export();
             Assert.Equal("{\"name\": \"Newy\", \"created\": 123, \"modified\": 456, \"items\": [{\"id\": 0, \"pos\": \"$p$200,200\", \"size\": \"$s$71,71\", \"base_size\": 25}], \"joins\": [], \"states\": \"00\"}", data);
-
             SelectGate(3); // XOR-gate
             Task.Delay(1).GetAwaiter().GetResult();
-
             IGate? gate2 = Click(canv, 300, 300);
             Assert.NotNull(gate2);
-
             Move(gate.SecretGetPin(2), gate2.SecretGetPin(0)); // Соединяем gate и gate2
-
             data = Export();
             Assert.Equal("{\"name\": \"Newy\", \"created\": 123, \"modified\": 456, \"items\": [{\"id\": 0, \"pos\": \"$p$200,200\", \"size\": \"$s$71,71\", \"base_size\": 25}, {\"id\": 3, \"pos\": \"$p$300,300\", \"size\": \"$s$71,71\", \"base_size\": 25}], \"joins\": [[0, 2, \"Out\", 1, 0, \"In\"]], \"states\": \"000\"}", data);
-
             SelectGate(5); // Switch-gate
             Task.Delay(1).GetAwaiter().GetResult();
-
             IGate? button = Click(canv, 100, 150);
             IGate? button2 = Click(canv, 100, 250);
             IGate? button3 = Click(canv, 100, 350);
             Assert.NotNull(button);
             Assert.NotNull(button2);
             Assert.NotNull(button3);
-
             Move(button.SecretGetPin(0), gate.SecretGetPin(0));
             Move(button2.SecretGetPin(0), gate.SecretGetPin(1));
             Move(button3.SecretGetPin(0), gate2.SecretGetPin(1));
-
             SelectGate(7); // LightBulb-gate
             Task.Delay(1).GetAwaiter().GetResult();
-
             IGate? ball = Click(canv, 400, 300);
             Assert.NotNull(ball);
-
             Move(gate2.SecretGetPin(2), ball.SecretGetPin(0));
-
             var input = (Switch) button;
             var input2 = (Switch) button2;
             var input3 = (Switch) button3;

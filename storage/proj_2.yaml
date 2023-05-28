@@ -1,0 +1,22 @@
+---
+name: "Новый проект"
+created: 1685303261
+modified: 1685304011
+schemes:
+	-
+		name: "Схема 1"
+		created: 1685303261
+		modified: 1685304011
+		items:
+			-
+				id: 2
+				pos: $p$474,241
+				size: $s$71,71
+				base_size: 25
+			-
+				id: 2
+				pos: $p$226,117
+				size: $s$71,71
+				base_size: 25
+		joins: []
+		states: "011"

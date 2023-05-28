@@ -1,0 +1,68 @@
+---
+name: "Новый проект"
+created: 1685293512
+modified: 1685293559
+schemes:
+	-
+		name: "Схема 1"
+		created: 1685293512
+		modified: 1685293559
+		items:
+			-
+				id: 6
+				pos: $p$61,346
+				size: $s$78,78
+				base_size: 27.500000000000004
+			-
+				id: 9
+				pos: $p$268,258
+				size: $s$78,90
+				base_size: 27.500000000000004
+				state: "0.0.0.0.0.0"
+			-
+				id: 3
+				pos: $p$468,328
+				size: $s$78,78
+				base_size: 27.500000000000004
+			-
+				id: 7
+				pos: $p$717,273
+				size: $s$71,71
+				base_size: 25
+				state: false
+			-
+				id: 5
+				pos: $p$31,501
+				size: $s$78,78
+				base_size: 27.500000000000004
+				state: false
+		joins:
+			-
+				- 0
+				- 0
+				- Out
+				- 1
+				- 0
+				- In
+			-
+				- 2
+				- 0
+				- In
+				- 1
+				- 4
+				- Out
+			-
+				- 3
+				- 0
+				- In
+				- 2
+				- 2
+				- Out
+			-
+				- 4
+				- 0
+				- Out
+				- 2
+				- 1
+				- In
+		states: "0000000"
