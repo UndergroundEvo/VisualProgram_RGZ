@@ -1,0 +1,36 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="800"
+        xmlns:vm="using:LogicSimulator.ViewModels"
+        x:Class="LogicSimulator.Views.LauncherWindow"
+        Width="450" Height="600"
+        Icon="/Assets/SibSUTIS.ico"
+        Title="LogicSimulator">
+
+	
+	<Design.DataContext>
+		<vm:LauncherWindowViewModel/>
+	</Design.DataContext>
+
+	<Window.Styles>
+		<StyleInclude Source="/Assets/Styles/LauncherStyles.axaml"/>
+	</Window.Styles>
+
+	<Grid RowDefinitions="auto, *, auto, auto, auto">
+		<TextBlock Grid.Row="0" Classes="Heading" Text="Перечень проектов"/>
+		<ListBox Grid.Row="1" Items="{Binding ProjectList}" DoubleTapped="DTapped">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Border Classes="Block">
+						<TextBlock Text="{Binding}" Tag="{Binding}"/>
+					</Border>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+		<Button Grid.Row="2" Command="{Binding Open}" Content="Открыть проект"/>
+		<Button Grid.Row="3" Command="{Binding Create}" Content="Создать новый проект"/>
+		<Button Grid.Row="4" Command="{Binding Exit}" Content="Выход"/>
+	</Grid>
+</Window>
