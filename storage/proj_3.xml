@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Dict name="Новый проект" created="$1685269894" modified="$1685269898">
+	<schemes>
+		<List>
+			<Dict name="Newy" created="$1685269894" modified="$1685269898" states="000000">
+				<items>
+					<List>
+						<Dict id="$0" pos="$p$718,415" size="$s$71,71" base_size="$25"/>
+						<Dict id="$0" pos="$p$411,358" size="$s$71,71" base_size="$25"/>
+						<Dict id="$0" pos="$p$574,203" size="$s$71,71" base_size="$25"/>
+						<Dict id="$0" pos="$p$538,405" size="$s$71,71" base_size="$25"/>
+						<Dict id="$0" pos="$p$520,512" size="$s$71,71" base_size="$25"/>
+					</List>
+				</items>
+				<joins>
+					<List/>
+				</joins>
+			</Dict>
+		</List>
+	</schemes>
+</Dict>
